@@ -238,9 +238,11 @@ function teamBuilderMenu(){
         });
     }
 };
+// this is the function to put the save in use
  function createTeam(){
     const htmlTeamPage= renderHtml(teamMembers, ids);
         writeToFile('team.html', htmlTeamPage)
+        console.log("team saved!!")
 };
 // function to save file
 function writeToFile(fileName, data) {
