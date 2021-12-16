@@ -30,7 +30,7 @@ const generateTeam= team =>{
             <ul class="emp-list">
                 <li class="list-item">ID:${engineer.getId()}</li>
                 <li class="list-item">Email:<a href = "mailto: ${engineer.getEmail()}">${engineer.getEmail()}</a></li>
-                <li class="list-item">Github:<a href= "https://github.com/${engineer.getGithub()}" target"_blank">${engineer.getGithub()}</a></li>
+                <li class="list-item">Github:<a href= "https://github.com/${engineer.getGithub()}" target="_blank">${engineer.getGithub()}</a></li>
             </ul>
         </div>
     </div>
@@ -83,7 +83,7 @@ const generateTeam= team =>{
 // also defining what team is in this case it is the first half of the html that we are adding into with the functions above
 module.exports= team =>{
     return `
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
