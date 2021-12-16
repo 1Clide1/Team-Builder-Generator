@@ -1,5 +1,11 @@
 # Team-Builder-Generator
-  
+
+## Example Screenshot
+![Result-Screenshot](Example-Team.jpg "result pic")
+
+## Walkthrough Video
+
+
 ## Table Of Contents
   
 * [Description](#Description)
@@ -55,7 +61,7 @@ This project is licensed under the MIT License: To get a better look at [License
 
       MIT License
 
-      Copyright (c) [2021] []
+      Copyright (c) [2021] [Brandon Diaz]
       
       Permission is hereby granted, free of charge, to any person obtaining a copy
       of this software and associated documentation files (the "Software"), to deal
