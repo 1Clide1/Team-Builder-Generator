@@ -1,5 +1,3 @@
-const Employee = require("../lib/Employee");
-
 // generate the team's html with one big function
 const generateTeam= team =>{
     // start with the manager
@@ -63,18 +61,21 @@ const generateTeam= team =>{
     html.push(team
         .filter(employee => employee.getRole()=== "Manager")
         .map(manager => generateManager(manager))
-        );
+    );
+    // add engineer
     html.push(team
         .filter(employee => employee.getRole()=== "Engineer")
         .map(engineer => generateEngineer(engineer))
-        // make sure to join the string that way we get the manager and this
+    // make sure to join the string that way we get the manager and this
         .join("")
-        );
+    );
+    // add intern
     html.push(team
         .filter(employee => employee.getRole()=== "Intern")
         .map(intern => generateIntern(intern))
         .join("")
-        );
+    );
+    return html.join("")
 };
 
 // export function to generate the entire html page
@@ -86,15 +87,16 @@ module.exports= team =>{
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team</title>
+    <title>My Team B)</title>
+    <link rel="stylesheet" href="./dist/stylesheet.css">
 </head>
 <body>
-<div class"team-header-container">
-    <div class"team-header">
+<div class="team-header-container">
+    <div class="team-header">
         <h1 class="team title">My Team</h1>
     </div>
 </div>
-    <div class"container">
+    <div class="container">
         <div class="flex-row">
             <div class"team-container">
                 ${generateTeam(team)}
