@@ -9,7 +9,6 @@ const fs= require("fs");
 // make an output folder named output/.resolve means that it will add that folder in this case inside the main folder
 const output_dir= path.resolve(__dirname, "output");
 // this will add into the folder, a file called team.html
-// as of right now i'm not sure how to actually go about saving the data I have made with this method. I'm probably missing something that's right under my nose but I will leave it here for when I do find out :D
 const outputPath= path.join(output_dir, "team.html");
 // this is how the html is going to be generated
 const renderHtml= require("./src/template-page");
@@ -240,14 +239,17 @@ function teamBuilderMenu(){
 };
 // this is the function to put the save in use
  function createTeam(){
+    if (!fs.existsSync(output_dir)) {
+        fs.mkdirSync(output_dir)
+    }
     const htmlTeamPage= renderHtml(teamMembers, ids);
-        writeToFile('team.html', htmlTeamPage)
+        writeToFile(outputPath, htmlTeamPage)
         console.log("team saved!!")
 };
 // function to save file
 function writeToFile(fileName, data) {
     // this writes the 
-    fs.writeFile(fileName, data, err =>{
+    fs.writeFileSync(fileName, data, err =>{
         if (err) {
            return console.error("err");
         }
